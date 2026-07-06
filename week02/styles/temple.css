@@ -19,7 +19,7 @@ header {
 }
 
 main {
-    width: 400px;
+    max-width: 840px;
     margin: 0 auto;
     text-align: center;
 }
@@ -33,22 +33,31 @@ nav a {
     color: rgb(239, 236, 231);
     padding: 0.5em;
     text-decoration: none;
-    display: inline-block;
+    display: block;
 }
 
 h1 {
     margin: 10px;
     text-align: center;
+    color: steelblue;
 }
 
 h2 {
     border-bottom: 1px solid #222;
 }
 
-img {
-    width: 100px;
+main img {
+    width: 150px;
     height: auto;
+    padding: 2px;
+    border: 1px solid steelblue;
     box-shadow: 0 0 30px #333;
+}
+
+aside img {
+    width: 200px;
+    height: auto;
+
 }
 
 section {
@@ -64,6 +73,10 @@ section p {
     margin: 10px;
 }
 
+p {
+    padding: 0;
+}
+
 ul {
     margin: 10px 20px;
 
@@ -71,11 +84,12 @@ ul {
 
 aside {
 
+    width: 20rem;
     margin: 1rem auto;
     border: 1px solid;
-    padding: 5px;
-    color: black;
-    background-color: rgb(218, 217, 217);
+    padding: 1rem;
+    color: #333;
+    background-color: #eee;
     text-align: center
 }
 
