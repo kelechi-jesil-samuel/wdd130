@@ -19,7 +19,7 @@ h1 {
     color: darkblue;
 }
 
-img {
+main img {
     width: 150px;
     height: auto;
     border: 1px solid black;
@@ -37,12 +37,16 @@ p {
     border: 1px solid rgb(0 0 0/10%);
     padding: 1rem;
     background-color: #ddd;
-    color: black;
+    color: #000;
 
 }
 
-.aside {
-    position: relative;
+.aside  {
     width: 20em;
     text-align: center;
+}
+.aside h2 {
+    position: absolute;
+    top: 35px;
+    left: 150px;
 }
