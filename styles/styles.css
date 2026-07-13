@@ -1,3 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 nav {
     background-color: darkblue;
     padding: 10px;
@@ -19,8 +25,23 @@ img {
     border: 1px solid black;
     padding: 2px;
     box-shadow: 0 0 30px gray;
+    float: right;
 }
 
 p {
     padding: 10px;
+}
+/* class selector*/
+.box {
+    margin: 1rem;
+    border: 1px solid rgb(0 0 0/10%);
+    padding: 1rem;
+    background-color: #ddd;
+    color: black;
+
+}
+
+.aside {
+    width: 20em;
+    text-align: center;
 }
