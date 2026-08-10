@@ -4,27 +4,50 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #222;
+:root {
+    --primary-color: #1e3a8a;
+    --accent1-color: #1e3a8a;
+    --accent2-color: #04639a;
+    --body-font: Arial, Helvetica, sans-serif;
+    --heading-font: Georgia, serif;
 }
 
+body {
+    font-family: var(--body-font);
+    color: #222;
+    line-height: 1.5;
+    background: #f4f8fb;
+}
+
+main {
+    width: 100%;
+    margin: 0 auto;
+}
+
+h1,
+h2 {
+    font-family: var(--heading-font);
+}
+
+/* HEADER */
 header {
     position: absolute;
+    top: 0;
+    left: 0;
     z-index: 10;
     width: 100%;
     height: 65px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 5px 25px;
-    background: rgba(0, 0, 0, 0.35);
+    padding: 5px 50px;
+    background: rgba(49, 80, 232, 0.35);
 }
 
 header img {
     width: 50px;
-    border: rgb(5, 67, 142) solid 2px;
-    box-shadow: #fff;
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 0 5px #fff;
     border-radius: 10px;
 }
 
@@ -36,10 +59,10 @@ header nav {
 
 header nav ul {
     display: flex;
-    gap: 80px;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
     list-style: none;
-    margin: 0;
-    padding: 0;
 }
 
 header nav ul li {
@@ -52,26 +75,305 @@ header nav ul li a {
     text-decoration: none;
     font-size: 14px;
     white-space: nowrap;
-
+    padding: 8px 12px;
+    transition: 0.3s ease;
 }
 
 header nav ul li a:hover {
+    background-color: var(--accent2-color);
+    border-radius: 5px;
+}
+
+/* HERO */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.hero > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    text-align: center;
     color: white;
-     background-color: rgb(4, 99, 154);
-     border: 5px solid rgb(4, 99, 154);
-     border-radius: 5px;
+    width: 80%;
 }
 
-
-
-/* Scrollbar styling */
-.dish-1::-webkit-scrollbar {
-  height: 8px;
+.hero-text h1 {
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 8px;
+    text-shadow: 2px 2px 6px #000;
 }
-.dish-1::-webkit-scrollbar-thumb {
-  background: #0066cc;
-  border-radius: 10px;
+
+.hero-text p {
+    font-size: 1.1rem;
+    margin-bottom: 18px;
 }
-.dish-1::-webkit-scrollbar-track {
-  background: #e0e0e0;
+
+.hero-text a,
+.adventure-box a,
+.trip a {
+    display: inline-block;
+    background-color: var(--accent2-color);
+    color: white;
+    text-decoration: none;
+    padding: 10px 22px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.hero-text a:hover,
+.adventure-box a:hover,
+.trip a:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* ACTIVITIES */
+.activities {
+    width: 840px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.activity {
+    background: white;
+    text-align: center;
+    padding-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+.activity img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.activity h2 {
+    color: var(--primary-color);
+    margin-top: 5px;
+}
+
+.icon {
+    font-size: 28px;
+    color: var(--accent2-color);
+}
+
+/* ADVENTURE */
+.adventure {
+    width: 840px;
+    margin: 45px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.adventure > img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.adventure-box {
+    padding: 25px;
+    text-align: center;
+}
+
+.adventure-box h2 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.adventure-box p {
+    margin-bottom: 15px;
+}
+/* NEWSLETTER */
+.newsletter {
+    width: 840px;
+    margin: 45px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    align-items: center;
+    background: var(--primary-color);
+    color: white;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.newsletter h2 {
+    color: white;
+}
+
+.newsletter p {
+    margin-top: 5px;
+}
+
+.newsletter form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.newsletter input {
+    padding: 11px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.newsletter button {
+    padding: 11px;
+    border: none;
+    border-radius: 5px;
+    background: var(--accent2-color);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.newsletter button:hover {
+    background: white;
+    color: var(--primary-color);
+}
+
+/* TRIPS */
+
+.trips {
+    width: 840px;
+    margin: 45px auto;
+}
+
+.trips > h2 {
+    text-align: center;
+    background: var(--primary-color);
+    color: white;
+    padding: 10px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+}
+
+.trip {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 25px;
+    background: white;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.trip img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.trip div {
+    padding: 20px;
+}
+
+.trip h2 {
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+.trip p {
+    margin-bottom: 15px;
+}
+
+/* TABLE */
+
+.trip-table {
+    width: 840px;
+    margin: 45px auto;
+    text-align: center;
+}
+
+.trip-table h2 {
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+}
+
+th,
+td {
+    border: 1px solid #ccc;
+    padding: 12px;
+}
+
+th {
+    background: var(--primary-color);
+    color: white;
+}
+
+tr:nth-child(even) {
+    background: #f0f5fa;
+}
+
+/* FOOTER */
+
+footer {
+    width: 100%;
+    background: #333;
+    color: white;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer nav {
+    margin: 0;
+    padding: 0;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+footer img {
+    width: 32px;
 }
