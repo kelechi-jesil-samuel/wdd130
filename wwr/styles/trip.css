@@ -215,7 +215,7 @@ header nav ul li a:hover {
 .adventure-box p {
     margin-bottom: 15px;
 }
-/* NEWSLETTER */
+/* Newsletter */
 .newsletter {
     width: 840px;
     margin: 45px auto;
@@ -265,8 +265,7 @@ header nav ul li a:hover {
     color: var(--primary-color);
 }
 
-/* TRIPS */
-
+/* Trip */
 .trips {
     width: 840px;
     margin: 45px auto;
@@ -313,7 +312,6 @@ header nav ul li a:hover {
 }
 
 /* TABLE */
-
 .trip-table {
     width: 840px;
     margin: 45px auto;
@@ -348,7 +346,6 @@ tr:nth-child(even) {
 }
 
 /* FOOTER */
-
 footer {
     width: 100%;
     background: #333;
